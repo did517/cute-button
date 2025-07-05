@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Cute Animated Button</title>
+  <style>
+    body {
+      background-color: #f0f8ff; /* bleu clair doux */
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+    .cute-button {
+      background: linear-gradient(45deg, #a1c4fd, #c2e9fb);
+      border: none;
+      border-radius: 12px;
+      padding: 15px 30px;
+      font-size: 1.2rem;
+      color: #2d2d2d;
+      cursor: pointer;
+      box-shadow: 0 4px 15px rgba(162, 201, 255, 0.6);
+      transition: all 0.3s ease;
+      position: relative;
+      overflow: hidden;
+    }
+    .cute-button:hover {
+      background: linear-gradient(45deg, #6a9efc, #9cc8ff);
+      box-shadow: 0 6px 20px rgba(106, 158, 252, 0.7);
+      transform: scale(1.05);
+      color: white;
+    }
+    /* Petite animation douce */
+    .cute-button::after {
+      content: "";
+      position: absolute;
+      top: -50%;
+      left: -50%;
+      width: 200%;
+      height: 200%;
+      background: radial-gradient(circle at center, rgba(255,255,255,0.4) 0%, transparent 70%);
+      opacity: 0;
+      transition: opacity 0.5s ease;
+      border-radius: 50%;
+    }
+    .cute-button:hover::after {
+      opacity: 1;
+      animation: pulse 1s infinite;
+    }
+    @keyframes pulse {
+      0% { transform: scale(0.8); opacity: 1; }
+      100% { transform: scale(1.2); opacity: 0; }
+    }
+  </style>
+</head>
+<body>
+  <button class="cute-button">Click me!</button>
+</body>
+</html>
